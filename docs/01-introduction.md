@@ -325,9 +325,9 @@
     ```
     ![In the above diagram](./resources/06-composition-notation.PNG)
 
-## 4. Generalization (Inheritance)
+## 4. INheritance
 
-- Generalization is the mechanism for combining similar classes of objects into a single, more general class. Generalization identifies commonalities among a set of entities. example, Admin, Employee, and Accountant, all are Person.
+- Inheritance is the mechanism for combining similar classes of objects into a single, more general class. Inheritance identifies commonalities among a set of entities. example, Admin, Employee, and Accountant, all are Person.
 
 ![alt](./resources/07-generalisation-notation.PNG)
 
