@@ -76,7 +76,10 @@ Question:
 Answer:
 - Diamond problem to split using composition/aggregation (HAS-A)
 - This solved using Bridge Pattern (Don't use inheritance when the interface and class extending)
+- Bridge pattern example: Turn on turn off the device using different interfaces (say remote, switch, alexa etc.)
 - **Resources:**
 - https://www.codeproject.com/Articles/890/Bridge-Pattern-Bridging-the-gap-between-Interface
+  - Image viewer: to show any type of image on any os platform
+  - Challenge: 
 - Refactored solution
 ![alt](./Assignment-4-full-ans.PNG)
