@@ -55,4 +55,28 @@ public class OnlineCart
 - Single responsibility principal
 - Open close principal -> say if we want to add new payment method
 
+New design:
+
+-----------
+
 ![alt](Assignment-2.PNG)
+
+## Assignment 3: Vital monitor
+- Given that you are desiging a vital monitor watch -> you need to send the vital information via mesaage to a care taker and also need to display in watch.
+- Meditator pattern
+
+![alt](./Assignment-3.PNG)
+
+## Assignment 4: 
+- Refactor the above design -> remove the multiple inheritance (Diamond problem)
+
+Question:
+![alt](./Assignment-4-question.PNG)
+
+Answer:
+- Diamond problem to split using composition/aggregation (HAS-A)
+- This solved using Bridge Pattern (Don't use inheritance when the interface and class extending)
+- **Resources:**
+- https://www.codeproject.com/Articles/890/Bridge-Pattern-Bridging-the-gap-between-Interface
+- Refactored solution
+![alt](./Assignment-4-full-ans.PNG)
