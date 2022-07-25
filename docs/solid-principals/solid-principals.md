@@ -13,7 +13,7 @@ The following five concepts make up our SOLID principles:
 
 ## 1. Single Responsibility principal
 
-- ### This principle states that a class should only have one responsibility. Furthermore, it should only have one reason to change.
+- ### The **S**  in SOLID stands for Single Responsibility principal, This principle states that a class should only have one responsibility. Furthermore, it should only have one reason to change.
   
 - Let's look into the below code and identify the issues.
 
@@ -39,7 +39,7 @@ The following five concepts make up our SOLID principles:
     ```
 
 - Problems in the above code:
-  - batteryIsOk Function is FAT
+  - batteryIsOk Function is complex (more cyclometer's complexity)
   - More cliometric complexity
   - Violation of SRP (As it is logging and checking the battery status)
   - Can not be extended say we want to implement multiple loggers like ConsoleLogger, FileLogger.
@@ -98,7 +98,7 @@ The following five concepts make up our SOLID principles:
     ```
 
 - To one extend the above now addresses the below issues.
-  - Now the batteryIsOk not fat (Fat problem SOLVED).
+  - Now the batteryIsOk not complex (complexity problem SOLVED).
   - SRP achieved -> BatteryMonitor class now only doing the core logic to check the battery state, logging moved to separate functionality.
   - Testability *is still not solved*, let say we want to test the above code, even though we have separated the logging functionality but still we left with tightly coupled, we can not switch between the loggers. it always creates the console logger for all the class instances. Now let's solve this problem using **Dependency inversion principal**
 
@@ -109,7 +109,7 @@ The following five concepts make up our SOLID principles:
 
 ## 2. Dependency inversion principal
 
-- **The D  in SOLID stands for Dependency inversion principal, The principle of dependency inversion refers to the decoupling of software modules. This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.**
+- The **D** in SOLID stands for Dependency inversion principal, The principle of dependency inversion refers to the decoupling of software modules. This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.**
 
 - The above code works, and we will be able to use the console logger freely within the BatteryMonitor class but by clearing the logger with the new key word in the constructor we have tightly coupled these two classes BatteryMonitor and ConsoleLogger. This made the BatteryMonitor class hard to test and also we lost the ability to switch out our logger.
 
@@ -210,7 +210,7 @@ The following five concepts make up our SOLID principles:
 
 ## 3. Interface Segregation principal
 
-- The I  in SOLID stands for interface segregation, and it simply means that larger interfaces should be split into smaller ones. By doing so, we can ensure that implementing classes only need to be concerned about the methods that are of interest to them.
+- The **I**  in SOLID stands for interface segregation, and it simply means that larger interfaces should be split into smaller ones. By doing so, we can ensure that implementing classes only need to be concerned about the methods that are of interest to them.
 
 - As discussed above, Now the ILogger interface is holding the all methods which may not be concerned for few loggers, so let's refactor the code like below.
 
@@ -300,3 +300,4 @@ The following five concepts make up our SOLID principles:
 
 - Code changes:
   - Now we segregated out the large interface ILogger to two interfaces, i.e the core functionality of logger i.e log method kept in the ILogger interface and the sub functionalities moved to the respective interfaces i.e. ClearConsole() method moved to IConsoleLogger(observe it extends the ILogger so log() functionality inherently exists) and ArchiveFileLog() method moved to IFileLogger interface.
+  - You may think that we are only using the log method, then what is the need of having separate interfaces file and  console logger. Assume that we are building library so that any one can extend, Interface will act like templates.
