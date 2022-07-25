@@ -64,7 +64,7 @@ Example:
 
 ```
 
-## Other examples:
+## Other examples
 
 - `java.util.Comparator` has the method compare which allows the user
 to define the algorithm or strategy to compare two objects of the

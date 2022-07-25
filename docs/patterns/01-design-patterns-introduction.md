@@ -29,7 +29,7 @@ best to encapsulate the object creation process in a program.
 the classes are made up or constructed. These include:
   1. Adapter Pattern
   2. Bridge Pattern
-  3. Composite Pattern
+  3. [Composite pattern](./structural/composite-pattern.md)
   4. Decorator Pattern
   5. Facade Pattern
   6. Flyweight Pattern
@@ -46,7 +46,7 @@ among each other and the delegation of responsibility. These include:
   5. Iterator Pattern
   6. Mediator Pattern
   7. Memento Pattern
-  8. Observer Pattern
+  8. [Observer Pattern](./behavioral/observer-pattern.md)
   9. State Pattern
   10. [Strategy Pattern](behavioral/strategy-pattern.md)
   11. Visitor Pattern
