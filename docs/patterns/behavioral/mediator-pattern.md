@@ -41,6 +41,7 @@ come to an agreement.
         public void notifyVital(Vital vital, String value);
     }
 
+    // Subject
     public interface IVitalSensor {
         public String getVitalValue();
         public void setVitalValue(String value);
@@ -48,23 +49,14 @@ come to an agreement.
     }
 
     // Observer
-    public interface IVitalObserver {
+    public abstract class IVitalObserver {
         public String observerName;
         public abstract void subscribe(Vital vital);
         public abstract void unSubscribe(Vital vital);
         public abstract void update(Vital vital, String value);
     }
 
-    // Subject
     public interface IVitalEvent {
-        public void subscribe(Vital vital, IVitalObserver subscriber);
-        public void unSubscribe(Vital vital, IVitalObserver subscriber);
-        public void notifyVital(Vital vital, String value);
-    }
-
-    
-
-    public class IVitalEventMediator implements IVitalEvent {
         public void subscribe(Vital vital, IVitalObserver subscriber);
         public void unSubscribe(Vital vital, IVitalObserver subscriber);
         public void notifyVital(Vital vital, String value);
@@ -182,7 +174,7 @@ come to an agreement.
         }
     }
 
-    // Observer 1
+    // Observer concrete implementation
     public class VitalObserver implements IVitalObserver {
         public  String observerName;
         private IVitalEvent mediator;
@@ -210,7 +202,9 @@ come to an agreement.
     // Client code
     public class Client {
         public static void main(String[] args) {
+        // observer -1
         IVitalObserver watchDisplayer = new VitalObserver("WATCH_DISPLAYER");
+        // observer -2
         IVitalObserver altersAggregator = new VitalObserver("ALERTS_AGGREGATOR");
 
         // altersAggregator -> observe only for pulse
