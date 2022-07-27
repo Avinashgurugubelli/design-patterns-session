@@ -323,6 +323,15 @@ id = 2, name = Shyam, address = Delhi
 
 ![Builder Pattern](../resources/Builder-pattern.PNG)
 
-### References:
+### References
 
 https://www.geeksforgeeks.org/builder-pattern-in-java/
+
+## Resources
+
+https://javapapers.com/design-patterns/builder-pattern/
+
+## Other examples
+
+- String builder
+- Human birth -> all will under same construction process, but different appearance with each other.

@@ -30,7 +30,7 @@ the classes are made up or constructed. These include:
   1. Adapter Pattern
   2. Bridge Pattern
   3. [Composite pattern](./structural/composite-pattern.md)
-  4. Decorator Pattern
+  4. [Decorator Pattern](structural/decorator-pattern.md)
   5. Facade Pattern
   6. Flyweight Pattern
   7. Proxy Pattern
@@ -44,9 +44,17 @@ among each other and the delegation of responsibility. These include:
   3. Chain of Responsibility Pattern
   4. Command Pattern
   5. Iterator Pattern
-  6. Mediator Pattern
+  6. [Mediator Pattern](behavioral/mediator-pattern.md)
   7. Memento Pattern
   8. [Observer Pattern](./behavioral/observer-pattern.md)
-  9. State Pattern
+  9. [State Pattern](behavioral/state-pattern.md)
   10. [Strategy Pattern](behavioral/strategy-pattern.md)
   11. Visitor Pattern
+
+
+## Resources
+
+https://www.dofactory.com/net/memento-design-pattern
+
+- Good resources to learn how to think the domain and convert to implementation
+  - https://www.uml-diagrams.org/class-diagrams-overview.html
