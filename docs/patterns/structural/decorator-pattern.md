@@ -134,3 +134,7 @@
     }
 
 ```
+
+## UML
+
+![alt](../resources/decorator-pattern-uml.PNG)

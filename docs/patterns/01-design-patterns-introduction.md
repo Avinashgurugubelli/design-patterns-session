@@ -27,7 +27,7 @@ best to encapsulate the object creation process in a program.
 
 - Structural patterns are concerned with the composition of classes i.e. how
 the classes are made up or constructed. These include:
-  1. Adapter Pattern
+  1. [Adapter pattern](./structural/adapter-pattern.md)
   2. Bridge Pattern
   3. [Composite pattern](./structural/composite-pattern.md)
   4. [Decorator Pattern](structural/decorator-pattern.md)
@@ -41,7 +41,7 @@ the classes are made up or constructed. These include:
 among each other and the delegation of responsibility. These include:
   1. Interpreter Pattern
   2. Template Pattern
-  3. Chain of Responsibility Pattern
+  3. [Chain of responsibilities pattern](./behavioral/chain-of-responsibility-pattern.md)
   4. Command Pattern
   5. Iterator Pattern
   6. [Mediator Pattern](behavioral/mediator-pattern.md)
