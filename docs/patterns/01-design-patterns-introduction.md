@@ -33,7 +33,7 @@ the classes are made up or constructed. These include:
   4. [Decorator Pattern](structural/decorator-pattern.md)
   5. Facade Pattern
   6. Flyweight Pattern
-  7. Proxy Pattern
+  7. [Proxy pattern](./structural/proxy-pattern.md)
 
 ## 3. Behavioral pattern
 
@@ -42,7 +42,7 @@ among each other and the delegation of responsibility. These include:
   1. Interpreter Pattern
   2. Template Pattern
   3. [Chain of responsibilities pattern](./behavioral/chain-of-responsibility-pattern.md)
-  4. Command Pattern
+  4. [Separator Pattern or Command pattern](./behavioral/command-pattern.md)
   5. Iterator Pattern
   6. [Mediator Pattern](behavioral/mediator-pattern.md)
   7. Memento Pattern

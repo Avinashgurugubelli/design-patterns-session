@@ -10,14 +10,15 @@
   6. [Decorator Pattern](structural/decorator-pattern.md)
   7. [Chain of responsibilities pattern](./behavioral/chain-of-responsibility-pattern.md)
   8. [Adapter pattern](./structural/adapter-pattern.md)
-  9. Separator Pattern or command pattern
-  10. Bridge Pattern
-  11. Proxy pattern
-  12. Memento pattern
-  13. [Builder Pattern](./creational/builder-pattern.md)
-  14. Prototype pattern
-  15. Factory pattern
-  16. Abstract factory pattern
-  17. Visitor pattern
+  9. [Separator Pattern or Command pattern](./behavioral/command-pattern.md)
+  10. [Proxy pattern](./structural/proxy-pattern.md)
+  11. Memento pattern
+  12. [Builder Pattern](./creational/builder-pattern.md)
+  13. Prototype pattern
+  14. Factory pattern
+  15. Abstract factory pattern
+  16. Visitor pattern
+  17. Fly weight pattern
+  18. Bridge Pattern
 
 

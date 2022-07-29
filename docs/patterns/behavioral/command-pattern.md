@@ -1,13 +1,25 @@
 # Command Pattern
 
+- The Command design pattern encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support un doable operations.
+
+- Lets consider an example:
+
+  - Say you are developing an JMS message listener service, And you were asked to develop a feature to expose an API to start, stop and check the status of a given listener, so that user can remotely control the JMS listeners.
+
+- Now lets elaborate  the definition:
+  
+  - `Encapsulates a request as an object`:   in our analogy means that the Listener API used to turn on the ListenerA can later be used to turn on ListenerB. and so on so forth.
+  - `queue or log requests, and support un doable operations`: means that Command’s Execute operation can store state for reversing its effects in the Command itself. The Command may have an added unExecute operation that reverses the effects of a previous call to execute.It may also support logging changes so that they can be reapplied in case of a system crash.
+
+## Other Examples
+
+- java.lang.Runnable defines the interface implemented by classes whose instances are executed by threads.
+- Implementations of javax.swing.Action also conform to the command pattern.
+
+## Code
 
 ``` Java
 
-    public enum ListenCommand {
-        start,
-        stop,
-        status
-    }
     public interface IListener {
         public void start();
         public void stop();
@@ -112,16 +124,50 @@
         }
     }
 
+    public class ListenerApi {
+        ICommand startCmd;
+        ICommand stopCmd;
+        ICommand statusCmd;
+
+        public ListenerApi(IListener listener) {
+            startCmd = new StartCommand(listener);
+            stopCmd = new StopCommand(listener);
+            statusCmd = new StatusCommand(listener);
+        }
+
+        public void start() {
+            startCmd.execute();
+        }
+
+        public void stop() {
+            startCmd.execute();
+        }
+
+        public void status() {
+            startCmd.execute();
+        }
+    }
+
     public class Program {
 
         public static void main (String[] args) {
             ListenerA listenerA = ListenerA.getInstance();
-            
-            ICommand startCmd = new StartCommand(listenerA);
-            ICommand stopCmd = new StopCommand(listenerA);
-            ICommand statusCmd = new StatusCommand(listenerA);
+            // Assume that we exposed an API, so that user can start stop and the status of the listener remotely.
+            // User will specify which Listener he need to operate.
+            ListenerApi api = new ListenerApi(listenerA);
+            api.start();
+            api.status();
+            api.stop();
         }
 
     }
 
 ```
+
+## Class diagram
+
+![alt](../resources/command-pattern-class-diagramPNG.PNG)
+
+## UML
+
+![alt](../resources/W3sDesign_Command_Design_Pattern_UML.jpg)
