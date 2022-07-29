@@ -139,6 +139,8 @@ or if its environment needs attention.
 ---
 https://github.com/venu-shastri/design-patterns-summary/blob/main/DEBT_CODE.docx
 
+- Ans: Inheritance
+
 #### Assignment 7
 ---
 Let us build a sales reporting application for the management of a store with multiple departments. The features of the application include:
@@ -148,6 +150,8 @@ Let us build a sales reporting application for the management of a store with mu
 - Monthly report — A list of all transactions for the current month for the selected department.
 - YTD sales chart — A chart showing the year-to-date sales for the selected department by month.
 	Whenever a different department is selected, both reports should be refreshed with the data for the currently selected department 
+
+- Ans: Mediator pattern
 
 #### Assignemnt 8
 ---
@@ -169,6 +173,9 @@ Refactor Below Code and remove code pollution
 
 ```
 
+- Ans : Decorator pattern -> this works at only one of the instance
+- Ans 2: Proxy pattern -> let the proxy do logging -> this works for all instances
+
 #### Assignment - 9
 ----
 Let us consider an online job site that receives XML data files from different employers with current openings in their organizations. When the number of vacancies is small, employers can enter details online. When the number of vacancies is large, employers upload details in the form of an XML file. Once the XML file is received, it needs to be parsed and processed. Let us assume the XML file to have the following details: 
@@ -182,3 +189,6 @@ Let us consider an online job site that receives XML data files from different e
 - h.Employer name 
 - i.Employer address In general,
  Details from (c) through (i) are all considered being the same for all jobs posted by a given employer. Apply the required pattern to design the process of parsing the input XML file and creating different JOB objects
+
+ - Ans: Fly weight pattern
+   - only Job type and min qualification varying.
