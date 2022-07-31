@@ -19,9 +19,10 @@ classes
 - The creational design pattern come with powerful suggestions on how
 best to encapsulate the object creation process in a program.
   1. [Builder Pattern](./creational/builder-pattern.md)
-  2. Prototype Pattern
+  2. [Prototype pattern](./creational/prototype-pattern.md)
   3. Singleton Pattern
-  4. Abstract Factory Patter
+  4. [Factory pattern](./creational/factory-pattern.md)
+  5. [Abstract factory pattern](./creational/abstract-factory-pattern.md)
 
 ## 2. Structural Pattern
 
@@ -45,7 +46,7 @@ among each other and the delegation of responsibility. These include:
   4. [Separator Pattern or Command pattern](./behavioral/command-pattern.md)
   5. Iterator Pattern
   6. [Mediator Pattern](behavioral/mediator-pattern.md)
-  7. Memento Pattern
+  7. [Memento pattern](./behavioral/memento-pattern.md)
   8. [Observer Pattern](./behavioral/observer-pattern.md)
   9. [State Pattern](behavioral/state-pattern.md)
   10. [Strategy Pattern](behavioral/strategy-pattern.md)
