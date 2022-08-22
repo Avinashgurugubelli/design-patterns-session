@@ -1,4 +1,4 @@
-# Cartesian product problem solution
+# Cartesian product problem solution (visitor pattern)
 
 ``` C#
 using System;
