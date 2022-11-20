@@ -67,7 +67,7 @@ public class DropDownComponent IComponent<Object, Object> {
 public class TextBoxComponent IComponent<String, Object> {
     // could be numeric, text, email, password
     public String type;
-    public DropDownComponent() {
+    public TextBoxComponent() {
         this.componentName = Components.textBox;
         type = "text"
     }
