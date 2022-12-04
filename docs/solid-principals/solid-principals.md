@@ -362,3 +362,68 @@ public class Game {
 	}
 }
 ```
+
+## Liskov substitution principle (LSP)
+
+- The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application. In other words, what we want is to have the objects of our subclasses behaving the same way as the objects of our superclass.
+- LSP is all about well-designed inheritance, when you inherit from a base class, you should be able to substitute your derived class with the base class without things going wrong. Otherwise, you have used inheritance incorrectly! And when you use inheritance incorrectly.
+	-  it leads to code that is confusing to understand.
+	-  it leads to a violation of the open-closed principle.
+### Example:
+- A great example illustrating LSP (given by Uncle Bob in a podcast I heard recently) was how sometimes something that sounds right in natural language doesn't quite work in code.
+
+In mathematics, a Square is a Rectangle. Indeed it is a specialization of a rectangle. The "is a" makes you want to model this with inheritance. However if in code you made Square derive from Rectangle, then a Square should be usable anywhere you expect a Rectangle. This makes for some strange behavior.
+
+Imagine you had SetWidth and SetHeight methods on your Rectangle base class; this seems perfectly logical. However if your Rectangle reference pointed to a Square, then SetWidth and SetHeight doesn't make sense because setting one would change the other to match it. In this case Square fails the Liskov Substitution Test with Rectangle and the abstraction of having Square inherit from Rectangle is a bad one
+
+```
+public class Rectangle {
+	protected int width;
+	protected int height;
+	
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	
+}
+
+
+public class Square extends Rectangle {
+	
+	public void setWidth(int width) {
+		super.setWidth(width);
+		super.setHeight(width);
+	}
+
+	public void setHeight(int height) {
+		super.setWidth(height);
+		super.setHeight(height);
+	}
+	
+}
+```
+
+- By looking at the above scenario you might still argue that it looks pretty consistent. That is true for the language you are coding in and also for Mathematics but a Square might not always satisfy the behavior of a Rectangle.
+
+``` java
+void clientMethod(Rectangle rec) {
+	rec.setWidth(5);
+	rec.setHeight(4);
+	assert(rec.area() == 20);
+}
+```
+- Your ClientMethod() expects a Rectangle and asserts a value of the area. All was well up to this point but now when we do rec.setHeight(4), our Square will set both its sides as 4, and that will totally mess up the assert statement.
+
+- We were expecting a Rectangle of sides 5 and 4 to have an area of 20 but we got a Square with sides 4 and 4 and area 16.
+
+- Hence, using Square’s object in place of the Rectangle’s object totally breaks LSP! Read the definition of LSP again:
+
+- “Simply put, the Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application.
+
+- Other real life examples:
+  - Your landlord wanted you to fix the main gate’s light bulb but you gave him Diwali vibes instead! (He won’t be happy!)
+  - You fed your neighbor’s pet duck expired Bread and now it’s dead. You decided to replace it with a toy duck. (He won’t be happy!)
