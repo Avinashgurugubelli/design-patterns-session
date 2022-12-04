@@ -328,9 +328,7 @@ public class Game {
 ### Problems:
 - OCP is violated
 - The above is code is open for modification i.e. action method in Game class will need to modify by adding some if/ else statements to support any new weapon.
-- Fix: create a new interface IWeapon and expose a method say `performAction`, so that any new weapon to support, that new weapon just need to implement the IWeapon.
-
-## Code fix (OCP):
+- Fix: create a new interface IWeapon and expose a method say `performAction`, so that any new weapon to support, that new weapon just need to implement the IWeapon. see the below Code fix (OCP):
 ```
 public interface class IWeapon {
 	
