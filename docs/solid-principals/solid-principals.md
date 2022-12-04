@@ -301,3 +301,64 @@ The following five concepts make up our SOLID principles:
 - Code changes:
   - Now we segregated out the large interface ILogger to two interfaces, i.e the core functionality of logger i.e log method kept in the ILogger interface and the sub functionalities moved to the respective interfaces i.e. ClearConsole() method moved to IConsoleLogger(observe it extends the ILogger so log() functionality inherently exists) and ArchiveFileLog() method moved to IFileLogger interface.
   - You may think that we are only using the log method, then what is the need of having separate interfaces file and  console logger. Assume that we are building library so that any one can extend, Interface will act like templates.
+
+## 4. Open/Close principal (OCP)
+
+Sample code:
+```
+public class Game {
+	private Weapon weapon;
+	
+	public Game(Weapon weapon) {
+		this.weapon = weapon;
+	}
+
+	public void action() {
+		if(this.weapon.type == "GUN") {
+			System.out.println("Perform GUN attack");
+		}
+		
+		if(this.weapon.type == "BOMB") {
+			System.out.println("Perform BOMB attack");
+		}
+	}
+}
+```
+
+### Problems:
+- OCP is violated
+- The above is code is open for modification i.e. action method in Game class will need to modify by adding some if/ else statements to support any new weapon.
+- Fix: create a new interface IWeapon and expose a method say `performAction`, so that any new weapon to support, that new weapon just need to implement the IWeapon.
+
+## Code fix (OCP):
+```
+public interface class IWeapon {
+	
+	public void performAction();
+
+}
+
+public class Gun implements IWeapon {
+	public void performAction() {
+		System.out.println("Perform GUN attack");
+	}
+}
+
+public class Bomb implements IWeapon {
+	public void performAction() {
+		System.out.println("Perform BOMB attack");
+	}
+}
+
+public class Game {
+	private Weapon weapon;
+	
+	public Game(Weapon weapon) {
+		this.weapon = weapon;
+	}
+
+	public void action() {
+		this.weapon.performAction();
+	}
+}
+```
