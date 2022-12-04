@@ -363,7 +363,7 @@ public class Game {
 }
 ```
 
-## Liskov substitution principle (LSP)
+## 5. Liskov substitution principle (LSP)
 
 - The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application. In other words, what we want is to have the objects of our subclasses behaving the same way as the objects of our superclass.
 - LSP is all about well-designed inheritance, when you inherit from a base class, you should be able to substitute your derived class with the base class without things going wrong. Otherwise, you have used inheritance incorrectly! And when you use inheritance incorrectly.
