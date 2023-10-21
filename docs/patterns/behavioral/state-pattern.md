@@ -27,7 +27,7 @@ If we implement this scenario in the traditional approach, then it is very clums
         }
 
         public void change() {
-            this.activeTrafficLight.updateState();
+            this.activeTrafficLight.updateState(this.activeTrafficLight);
         }
 
         public void setActiveTrafficLight(ITrafficLight currentLight) {
