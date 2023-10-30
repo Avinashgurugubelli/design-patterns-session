@@ -140,11 +140,11 @@
         }
 
         public void stop() {
-            startCmd.execute();
+            stopCmd.execute();
         }
 
         public void status() {
-            startCmd.execute();
+            statusCmd.execute();
         }
     }
 
